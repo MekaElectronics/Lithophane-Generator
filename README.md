@@ -8,7 +8,7 @@ This project is a Python-based lithophane generator that converts images into gr
 - Support for different image formats
 ## Installation
 ### Prerequisites
-- Python 3.x
+- Python 3.12.7
 - Required Python packages (e.g., `numpy`, `Pillow`, `matplotlib`)
 ### Steps to Install 
 1. Clone the repository: ```git clone git@github.com:MekaElectronics/Lithophane-Generator.git ```
