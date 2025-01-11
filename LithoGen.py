@@ -3,6 +3,14 @@ import numpy as np
 from stl import mesh
 from scipy.ndimage import gaussian_filter as GaussianFilter
 import argparse
+import sys
+
+def ShowProgress(Current,Total, length = 40):
+    Percent = Current / Total
+    arrow = '█' * int(Percent * length)
+    space = ' ' * (length - len(arrow))
+    sys.stdout.write(f'\r|{arrow}{space}| {Percent*100:.2f}%')
+    sys.stdout.flush()
 
 def GrayscaleConversion(InputImage):
     """ 
@@ -119,9 +127,6 @@ def MakeSTL(ImageDir,Max=3.0,Min=0.5,PSize=0.2,Blur=5,Base=True):
     # Need to scale the image to an appropriate size as the unit of measure in images is pixel          #
     # whereas when creating an STL file, the unit automatically becomes millimeter.                     #
     # In other words, an image with a resolution of 1920x1080 will be ~2 meters wide without scaling !  #
-    #                                                                                                   #
-    # The scaling needs to happen automatically in the ranges of 8->12 cm                               #
-    # this scaling output will be the pixel size in the generation of the STL file                      #
     #####################################################################################################
 
     PixelSize,GrayImage = ResizeImage(GrayImage,Size=PSize)
@@ -136,9 +141,12 @@ def MakeSTL(ImageDir,Max=3.0,Min=0.5,PSize=0.2,Blur=5,Base=True):
                 continue
             else :
                 Cubes.append(MakePixel(PixelSize,Intensity,(i*PixelSize,j*PixelSize)))
-        print(f"Progress : {i/GrayImage.shape[0] * 100:.2f}%")
+        ShowProgress(i,GrayImage.shape[0],40)
     
-    print("Progress : 100%\nSaving File...")
+    FinalProgress = '|'+'█'*40+'| 100%  '
+    sys.stdout.write(f'\r{FinalProgress}\n')
+    sys.stdout.flush()
+    print('Saving File...')
     CombineCubesIntoSTL(Cubes)
 
 Parser = argparse.ArgumentParser("Create a 3D image, or a lithophane, from a given 2D image.")

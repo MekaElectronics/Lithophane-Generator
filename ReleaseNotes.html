@@ -92,12 +92,12 @@
         <div class="header">
             <h1>LithoGen.py<br>Release Notes</h1>
             <div class="header-content">
-                <button onclick="toggleReleaseNotes()"><strong>Version: 1.0.0</strong></button>
+                <button onclick="toggleReleaseNotes('releaseNotes100')"><strong>Version: 1.0.0</strong></button>
                 <p>Release Date: <strong>December 31, 2024</strong></p>
             </div>
         </div>
 
-        <div class="release-notes" id="releaseNotes">
+        <div class="release-notes" id="releaseNotes100">
             <div class="section">
                 <h2>Features</h2>
                 <ul>
@@ -124,11 +124,27 @@
                 </p>
             </div>
         </div>
+
+        <div class="header">
+            <div class="header-content">
+                <button onclick="toggleReleaseNotes('releaseNotes101')"><strong>Version: 1.0.1</strong></button>
+                <p>Release Date: <strong>January 11, 2024</strong></p>
+            </div>
+        </div>
+
+        <div id="releaseNotes101" class="release-notes">
+            <div class="section">
+                <h2>Features</h2>
+                <ul>
+                    <li>Added a loading progress bar in the CLI.</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <script>
-        function toggleReleaseNotes() {
-            const notes = document.getElementById('releaseNotes');
+        function toggleReleaseNotes(id) {
+            const notes = document.getElementById(id);
             notes.classList.toggle('show');
         }
     </script>
