@@ -1,0 +1,20 @@
+{
+  "amber": "#f7b857",
+  "amber-hover": "#ffc96d",
+  "amber-pressed": "#d39642",
+  "amber-track": "#5c4526",
+
+  "charcoal": "#303030",
+  "window": "#272727",
+  "sunken": "#222222",
+  "field": "#3b3b3b",
+  "line": "#4a4a4a",
+
+  "text": "#f0f0f0",
+  "text-dim": "#9a9a9a",
+  "text-off": "#6b6b6b",
+
+  "model": "#f0ebde",
+  "backlight": "#ffdba8",
+  "viewport": "#222222"
+}

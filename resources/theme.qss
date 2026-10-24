@@ -1,0 +1,221 @@
+QWidget {
+    background: @window;
+    color: @text;
+    font-size: 13px;
+}
+QLabel { background: transparent; }
+QLabel:disabled, QCheckBox:disabled { color: @text-off; }
+
+/* header ------------------------------------------------------- */
+#header {
+    background: @charcoal;
+    border-bottom: 2px solid @amber;
+}
+#wordmark {
+    color: @amber;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+#tagline { color: @text-dim; font-size: 12px; }
+#filename { color: @text-dim; font-style: italic; }
+
+/* grouping ----------------------------------------------------- */
+QGroupBox {
+    background: @charcoal;
+    border: 1px solid @line;
+    border-radius: 6px;
+    margin-top: 14px;
+    padding: 10px 10px 8px 10px;
+    font-weight: bold;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 10px;
+    padding: 0 6px;
+    color: @amber;
+}
+
+QTabWidget::pane {
+    background: @charcoal;
+    border: 1px solid @line;
+    border-radius: 6px;
+    top: -1px;
+}
+QTabBar::tab {
+    background: @field;
+    color: @text-dim;
+    border: 1px solid @line;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 7px 16px;
+    margin-right: 2px;
+}
+QTabBar::tab:selected {
+    background: @charcoal;
+    color: @amber;
+    border-top: 2px solid @amber;
+}
+QTabBar::tab:hover:!selected { color: @text; }
+
+/* inputs -------------------------------------------------------- */
+QDoubleSpinBox, QSpinBox, QLineEdit, QComboBox {
+    background: @field;
+    border: 1px solid @line;
+    border-radius: 4px;
+    padding: 4px 6px;
+    selection-background-color: @amber;
+    selection-color: @charcoal;
+}
+QDoubleSpinBox:focus, QSpinBox:focus, QLineEdit:focus, QComboBox:focus {
+    border: 1px solid @amber;
+}
+QDoubleSpinBox:disabled, QSpinBox:disabled, QLineEdit:disabled, QComboBox:disabled {
+    background: #333333;
+    color: @text-off;
+    border: 1px solid #3f3f3f;
+}
+QComboBox QAbstractItemView {
+    background: @field;
+    border: 1px solid @line;
+    selection-background-color: @amber;
+    selection-color: @charcoal;
+    outline: none;
+}
+
+QCheckBox { spacing: 7px; padding: 2px 0; }
+QCheckBox::indicator {
+    width: 15px;
+    height: 15px;
+    border: 1px solid @line;
+    border-radius: 3px;
+    background: @field;
+}
+QCheckBox::indicator:hover { border: 1px solid @amber; }
+QCheckBox::indicator:checked {
+    background: @amber;
+    border: 1px solid @amber;
+}
+QCheckBox::indicator:disabled { background: #333333; border: 1px solid #3f3f3f; }
+
+/* buttons ------------------------------------------------------- */
+QPushButton {
+    background: @field;
+    color: @text;
+    border: 1px solid @line;
+    border-radius: 5px;
+    padding: 7px 14px;
+}
+QPushButton:hover { border: 1px solid @amber; color: @amber; }
+QPushButton:pressed { background: #343434; }
+QPushButton:disabled { color: @text-off; border: 1px solid #3f3f3f; }
+
+QPushButton#primary {
+    background: @amber;
+    color: @charcoal;
+    border: 1px solid @amber;
+    font-weight: bold;
+}
+QPushButton#primary:hover { background: @amber-hover; color: @charcoal; }
+QPushButton#primary:pressed { background: @amber-pressed; }
+QPushButton#primary:disabled {
+    background: #3f3a33;
+    color: @text-off;
+    border: 1px solid #3f3a33;
+}
+
+/* slider -------------------------------------------------------- */
+QSlider::groove:horizontal {
+    height: 4px;
+    background: @field;
+    border-radius: 2px;
+}
+QSlider::sub-page:horizontal { background: @amber; border-radius: 2px; }
+QSlider::handle:horizontal {
+    background: @amber;
+    border: 2px solid @charcoal;
+    width: 13px;
+    height: 13px;
+    margin: -6px 0;
+    border-radius: 7px;
+}
+QSlider::handle:horizontal:hover { background: @amber-hover; }
+
+QSlider::groove:vertical {
+    width: 4px;
+    background: @field;
+    border-radius: 2px;
+}
+QSlider::handle:vertical {
+    background: @amber;
+    border: 2px solid @charcoal;
+    width: 13px;
+    height: 13px;
+    margin: 0 -6px;
+    border-radius: 7px;
+}
+QSlider::handle:vertical:hover { background: @amber-hover; }
+
+/* the view panel: light controls and the 3D view, as one ------- */
+#viewpanel {
+    background: @charcoal;
+    border: 1px solid @line;
+    border-radius: 7px;
+}
+#panelrow { background: transparent; }
+#panelrow QLabel { color: @text-dim; font-size: 11px; }
+#lightTitle {
+    color: @amber;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+#separator, #vseparator { background: @line; border: none; }
+#readout {
+    color: @text;
+    font-family: Consolas, "DejaVu Sans Mono", monospace;
+    font-size: 12px;
+}
+
+/* chrome -------------------------------------------------------- */
+QScrollArea { border: none; }
+QScrollBar:vertical {
+    background: @sunken;
+    width: 10px;
+    margin: 0;
+}
+QScrollBar::handle:vertical {
+    background: @line;
+    border-radius: 5px;
+    min-height: 30px;
+}
+QScrollBar::handle:vertical:hover { background: @amber-pressed; }
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
+
+QStatusBar {
+    background: @charcoal;
+    color: @text-dim;
+    border-top: 1px solid @line;
+}
+QStatusBar::item { border: none; }
+
+QToolTip {
+    background: @charcoal;
+    color: @text;
+    border: 1px solid @amber;
+    border-radius: 4px;
+    padding: 5px 7px;
+}
+
+/* The build summary is laid out in columns, so it needs a fixed pitch. */
+#summary {
+    background: @sunken;
+    border: 1px solid @line;
+    border-radius: 5px;
+    padding: 8px 10px;
+    color: @text-dim;
+    font-family: Consolas, "DejaVu Sans Mono", monospace;
+    font-size: 12px;
+}

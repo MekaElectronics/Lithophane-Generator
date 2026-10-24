@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Written into the 3MF package as "[Content_Types].xml".
+
+  OPC has no extension-to-type convention of its own, so every extension used
+  in the package must be declared here or a reader may reject the archive.
+-->
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+  <Default Extension="rels"
+           ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
+  <Default Extension="model"
+           ContentType="application/vnd.ms-package.3dmanufacturing-3dmodel+xml"/>
+</Types>
