@@ -47,3 +47,6 @@ Run ```python gui.py``` to open the desktop front end. Hover over a setting to s
 ## Other informations
 The [ReleaseNotes.html](ReleaseNotes.html) contains more info on the product's current version and the known issues.
 The script is always under development and I hope it helps all 3D printing enthusiasts !
+
+## License
+This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
