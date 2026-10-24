@@ -128,7 +128,7 @@
         <div class="header">
             <div class="header-content">
                 <button onclick="toggleReleaseNotes('releaseNotes101')"><strong>Version: 1.0.1</strong></button>
-                <p>Release Date: <strong>January 11, 2024</strong></p>
+                <p>Release Date: <strong>January 11, 2025</strong></p>
             </div>
         </div>
 
@@ -138,6 +138,41 @@
                 <ul>
                     <li>Added a loading progress bar in the CLI.</li>
                 </ul>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="header-content">
+                <button onclick="toggleReleaseNotes('releaseNotes110')"><strong>Version: 1.1.0</strong></button>
+                <p>Release Date: <strong>October 24, 2026</strong></p>
+            </div>
+        </div>
+
+        <div id="releaseNotes110" class="release-notes">
+            <div class="section">
+                <h2>Features</h2>
+                <ul>
+                    <li>Added a desktop GUI (<code>gui.py</code>) with a live 3D preview, light position, opacity and rotation controls, and hover tooltips on the settings.</li>
+                    <li>Reorganised the code into the <code>lithogen</code> package; <code>LithoGen.py</code> is now a thin command line entry point.</li>
+                    <li>Added 3MF output next to STL. The extension of the output file picks the format, and 3MF files are much smaller.</li>
+                    <li>Added tone-to-thickness curves (<code>beer</code>, <code>linear</code>, <code>gamma</code>).</li>
+                    <li>Added image tuning: denoise, sharpen, contrast, brightness, gamma, auto-levelling, resampling filter, invert and mirror.</li>
+                    <li>Plate size can be set by width, height or longest side in mm, with an adjustable sampling pitch.</li>
+                    <li>Added a flat border for stiffness and framing.</li>
+                    <li>Added curved plates (<code>--curve-radius</code>) with adjustable back segments.</li>
+                    <li>Added a cut-out mode for logos and keychains that removes the background, by brightness or by colour.</li>
+                    <li>Added a triangle budget that coarsens the pitch to keep the file size in check.</li>
+                    <li>Added a manifold check on the exported mesh, a thickness map preview, and a dry-run mode.</li>
+                    <li>Added support for many input image formats (jpg, png, bmp, tiff, webp, ...).</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Additional Information</h2>
+                <p>
+                    Requires Python 3.9 or newer. The GUI needs <code>PyQt5</code> and <code>vtk</code>, and <code>--preview</code> needs <code>matplotlib</code>.
+                    Use <code>--help</code> to list every command line option.
+                </p>
             </div>
         </div>
     </div>
