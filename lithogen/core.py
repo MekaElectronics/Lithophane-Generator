@@ -176,7 +176,7 @@ class LithophaneResult:
         rows, cols = self.thickness.shape
         return (
             f"LithophaneResult({self.width_mm:.1f} x {self.height_mm:.1f} mm, "
-            f"{cols}x{rows} samples, {self.mesh.triangle_count:,} triangles, "
+            f"{cols}x{rows} samples, {self.mesh.triangle_count():,} triangles, "
             f"output_path={self.output_path!r})"
         )
 
@@ -188,8 +188,8 @@ class LithophaneResult:
             f"samples    {cols} x {rows}  (pitch {self.settings.pitch_mm} mm)",
             f"thickness  {self.thickness.min():.2f} - {self.thickness.max():.2f} mm "
             f"({self.settings.curve} curve)",
-            f"mesh       {self.mesh.triangle_count:,} triangles, "
-            f"{self.mesh.vertex_count:,} vertices",
+            f"mesh       {self.mesh.triangle_count():,} triangles, "
+            f"{self.mesh.vertex_count():,} vertices",
         ]
         if self.stats:
             state = "watertight" if self.stats.get("watertight") else "NOT watertight"

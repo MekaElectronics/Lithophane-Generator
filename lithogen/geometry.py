@@ -22,7 +22,7 @@ class Mesh:
         self.faces = faces
 
     def __repr__(self) -> str:
-        return f"Mesh({self.vertex_count:,} vertices, {self.triangle_count:,} triangles)"
+        return f"Mesh({self.vertex_count():,} vertices, {self.triangle_count():,} triangles)"
 
     def triangle_count(self) -> int:
         return int(self.faces.shape[0])
@@ -383,15 +383,15 @@ def check_watertight(mesh: Mesh) -> dict:
     edges = np.concatenate([f[:, [0, 1]], f[:, [1, 2]], f[:, [2, 0]]])
     lo = edges.min(axis=1)
     hi = edges.max(axis=1)
-    keys = lo * np.int64(mesh.vertex_count) + hi
+    keys = lo * np.int64(mesh.vertex_count()) + hi
     _, counts = np.unique(keys, return_counts=True)
 
     tris = mesh.expand()
     areas = 0.5 * np.linalg.norm(np.cross(tris[:, 1] - tris[:, 0], tris[:, 2] - tris[:, 0]), axis=1)
 
     return {
-        "triangles": mesh.triangle_count,
-        "vertices": mesh.vertex_count,
+        "triangles": mesh.triangle_count(),
+        "vertices": mesh.vertex_count(),
         "boundary_edges": int((counts == 1).sum()),
         "nonmanifold_edges": int((counts > 2).sum()),
         "degenerate_faces": int((areas <= 0).sum()),

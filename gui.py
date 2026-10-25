@@ -887,7 +887,7 @@ class LithoGenWindow(QMainWindow):
         self.info_label.setText(result.summary())
         self.info_label.setVisible(True)
         self.statusBar().showMessage(
-            f"{result.mesh.triangle_count:,} triangles in {result.elapsed_s:.2f} s"
+            f"{result.mesh.triangle_count():,} triangles in {result.elapsed_s:.2f} s"
         )
         self.display_stl(self._preview_stl)
 

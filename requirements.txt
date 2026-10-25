@@ -1,0 +1,7 @@
+numpy>=1.22
+scipy>=1.8
+pillow>=9.0
+numpy-stl>=3.0
+matplotlib>=3.5
+PyQt5>=5.15
+vtk>=9.2
